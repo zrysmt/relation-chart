@@ -1,0 +1,20 @@
+[
+  {
+    "appId": "napos.order.reactor",
+    "cluster":"cluster1",
+    "timeout":1000,
+    "parallel":500
+  },
+  {
+    "appId": "mars.location",
+    "cluster":"cluster1",
+    "timeout":1600,
+    "parallel":500
+  },
+  {
+    "appId": "Coffee.MktRstService",
+    "cluster":"cluster1",
+    "timeout":1800,
+    "parallel":500
+  }
+]

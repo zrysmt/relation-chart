@@ -1,0 +1,20 @@
+[
+  {
+    "appId": "mock.appid.server.a2",
+    "cluster":"cluster1",
+    "timeout":1500,
+    "parallel":500
+  },
+  {
+    "appId": "mock.appid.server.b2",
+    "cluster":"cluster1",
+    "timeout":1500,
+    "parallel":500
+  },
+  {
+    "appId": "mock.appid.server.c2",
+    "cluster":"cluster1",
+    "timeout":1500,
+    "parallel":500
+  }
+]

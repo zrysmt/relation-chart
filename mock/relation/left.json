@@ -1,0 +1,21 @@
+[
+  {
+    "name":"CreteBaseService&cluster1",
+    "appId": "CreteBaseService",
+    "cluster":"cluster1",
+    "timeout":1500,
+    "parallel":500
+  },
+  {
+    "appId": "logtest",
+    "cluster":"cluster1",
+    "timeout":1500,
+    "parallel":500
+  },
+  {
+    "appId": "napos.misc",
+    "cluster":"cluster1",
+    "timeout":1500,
+    "parallel":500
+  }
+]

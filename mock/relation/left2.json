@@ -1,0 +1,62 @@
+[
+  {
+    "appId": "mock.appid.client.a2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.client.b2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.client.c2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.client.d2",
+    "cluster": "cluster2"
+  },
+  {
+    "appId": "mock.appid.client.e2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.client.f2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.client.g2",
+    "cluster": "cluster3"
+  },
+  {
+    "appId": "mock.appid.b2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.c2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.a2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.b2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.c2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.a2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.b2",
+    "cluster": "cluster1"
+  },
+  {
+    "appId": "mock.appid.c2",
+    "cluster": "cluster1"
+  }
+]
