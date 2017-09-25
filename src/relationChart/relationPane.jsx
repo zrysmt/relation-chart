@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 import RelationChart from './relationChart';
 
-let pServer = 'http://localhost:8989/'; 
+let pServer = 'http://localhost:8989/'; //服务器地址
 let left = 'api/relation/left';         //左边 接口url
 let right = 'api/relation/right';       //右边 接口url
 let initialAppId = 'initialAppId';      //初始AppId(属性之一，可以是任意的)
