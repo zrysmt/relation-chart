@@ -7,9 +7,10 @@ import _ from 'lodash';
 import RelationChart from './relationChart';
 
 let pServer = 'http://localhost:8989/'; 
-let left = 'api/relation/left';         //左边
-let right = 'api/relation/right';       //右边
-
+let left = 'api/relation/left';         //左边 接口url
+let right = 'api/relation/right';       //右边 接口url
+let initialAppId = 'initialAppId';      //初始AppId(属性之一，可以是任意的)
+let initialCluster = 'initialCluster';  //初始Cluster(属性之一，可以是任意的)
 
 class RelationPane extends Component {
     constructor(props) {
@@ -63,16 +64,16 @@ class RelationPane extends Component {
     /**
      * 处理关系数据
      * @param appIdJson 查询的中心节点
-     * @param clientsJson 该中心节点的客户端
-     * @param serversJson 该中心节点的服务端
+     * @param leftJson 该中心节点的左边
+     * @param rightJson 该中心节点的右边
      */
-    dealRelationData(appIdJson, clientsJson = [], serversJson = []) {
-        clientsJson = this.addDataAttr('clients', clientsJson, this.level + 1);
-        serversJson = this.addDataAttr('servers', serversJson, this.level - 1);
+    dealRelationData(appIdJson, leftJson = [], rightJson = []) {
+        leftJson = this.addDataAttr('left', leftJson, this.level + 1);
+        rightJson = this.addDataAttr('right', rightJson, this.level - 1);
 
-        let data = this.dataStore.concat(appIdJson, clientsJson, serversJson);
+        let data = this.dataStore.concat(appIdJson, leftJson, rightJson);
         data.forEach((d,i)=>{
-            if(!d.name && d.appId && d.cluster) d.name = d.appId + "&" + d.cluster;
+            if(!d.name && d.appId && d.cluster) d.name = d.appId + "&" + d.cluster; //唯一的ID
             let appIdClusterArr = d.name.split("&");
             if(!d.appId) d.appId = appIdClusterArr[0];
             if(!d.cluster) d.cluster = appIdClusterArr[1];
@@ -81,12 +82,12 @@ class RelationPane extends Component {
 
         this.dataStore = data;
         //level 不让它再自增长，而是改为点击的时候计算+1
-        /*if(this.isArrayAndHasLengths(clientsJson) || this.isArrayAndHasLengths(serversJson)){
+        /*if(this.isArrayAndHasLengths(leftJson) || this.isArrayAndHasLengths(rightJson)){
             this.level++ ;
         }*/
         let links = this.linksStore;
-        if (this.isArrayAndHasLengths(clientsJson)) {
-            clientsJson.forEach((d, i) => {
+        if (this.isArrayAndHasLengths(leftJson)) {
+            leftJson.forEach((d, i) => {
                 if (appIdJson.name !== d.name) {
                     links.push({
                         source: appIdJson[0].name ,
@@ -95,8 +96,8 @@ class RelationPane extends Component {
                 }
             });
         }
-        if (this.isArrayAndHasLengths(serversJson)) {
-            serversJson.forEach((d, i) => {
+        if (this.isArrayAndHasLengths(rightJson)) {
+            rightJson.forEach((d, i) => {
                 if (appIdJson.name !== d.name) {
                     links.push({
                         source: d.name ,
@@ -135,7 +136,6 @@ class RelationPane extends Component {
     }
 
     componentDidMount() {
-        
         this.getDataFromServer(this.appId , this.cluster);
     }
      

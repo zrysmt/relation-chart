@@ -1,20 +1,20 @@
 [
   {
-    "name":"CreteBaseService&cluster1",
+    "name":"mock.appid.client2",
     "appId": "CreteBaseService",
-    "cluster":"cluster1",
+    "cluster":"cluster1.1",
     "timeout":1500,
     "parallel":500
   },
   {
-    "appId": "logtest",
-    "cluster":"cluster1",
+    "appId": "mock.appid.client2",
+    "cluster":"cluster1.2",
     "timeout":1500,
     "parallel":500
   },
   {
-    "appId": "napos.misc",
-    "cluster":"cluster1",
+    "appId": "mock.appid.client2",
+    "cluster":"cluster1.3",
     "timeout":1500,
     "parallel":500
   }

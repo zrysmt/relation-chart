@@ -1,18 +1,18 @@
 [
   {
-    "appId": "napos.order.reactor",
+    "appId": "mock.appid.server.a1",
     "cluster":"cluster1",
     "timeout":1000,
     "parallel":500
   },
   {
-    "appId": "mars.location",
+    "appId": "mock.appid.server.b1",
     "cluster":"cluster1",
     "timeout":1600,
     "parallel":500
   },
   {
-    "appId": "Coffee.MktRstService",
+    "appId": "mock.appid.server.c1",
     "cluster":"cluster1",
     "timeout":1800,
     "parallel":500

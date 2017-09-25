@@ -176,7 +176,7 @@ class RelationChart extends Component {
         data.forEach((d,i)=>{
             //处理nums和index属性
             for(let key in obj1){
-                if(key === d.level) d.nums = obj1[key].nums;
+                if(""+key === ""+d.level) d.nums = obj1[key].nums;
             }
             if(obj[d.level]){
                 d.index = ++index;
@@ -191,15 +191,16 @@ class RelationChart extends Component {
             if (0 === d.level || "center" === d.type) {
                 d.x = mWidth;
                 d.y = mHeight - yOffset;
-            } else if ("clients" === d.type) {
+            } else if ("left" === d.type) {
                 d.x = mWidth + d.level * xLen;
                 d.y = mHeight - yOffset;
-            } else if ("servers" === d.type) {
+            } else if ("right" === d.type) {
                 d.x = mWidth + d.level * xLen;
                 d.y = mHeight - yOffset;
             }
         });
-        console.log(data);
+    
+        console.log('data',data);
 
         return data;
     }
